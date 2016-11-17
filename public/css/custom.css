@@ -109,6 +109,11 @@ body {
     color: #1bb773;
 }
 
+/* Index */
+.panel {
+    height: 200px;
+}
+
 /* Login/Signup Page */
 
 #login-signup-form {
