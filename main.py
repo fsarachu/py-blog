@@ -3,5 +3,6 @@ import webapp2
 from handlers import *
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', MainHandler),
+    ('/signup', SignupHandler)
 ], debug=True)
