@@ -1,11 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Login System</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <title>Sign Up</title>
 </head>
+
 <body>
-{% block content %}
-{% endblock %}
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsemenu"
+              aria-expanded="false"><span class="sr-only">Toggle Navigation Menu</span><span
+          class="glyphicon glyphicon-menu-hamburger"></span></button>
+      <a href="index.html" class="navbar-brand">Awesome Blog</a>
+    </div>
+    <div class="collapse navbar-collapse" id="collapsemenu">
+      <div class="navbar-right">
+        <a class="btn btn-login navbar-btn" href="login.html">Log in</a>
+        <a class="btn btn-signup navbar-btn" href="signup.html">Sign up</a>
+      </div>
+
+      <ul class="nav navbar-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Posts</a></li>
+        <li><a href="#">New Post</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<div class="content container">
+  {% block content %}
+  {% endblock %}
+</div> <!-- end container-->
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/magic.js"></script>
 </body>
+
 </html>
