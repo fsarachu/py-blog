@@ -1,0 +1,152 @@
+/* General */
+
+.col-center {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+body {
+	font-family: 'Lato', 'Helvetica', 'Helvetica Neue', sans-serif;
+	background: #FFF;
+}
+
+.content {
+	padding-top: 60px;
+}
+
+
+/* Navbar */
+
+.navbar {
+	font-size: 16px;
+	border: none;
+	background: #1bb773;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+}
+
+.navbar-default .navbar-header .navbar-brand {
+	color: #FFF;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu {
+	background: #666;
+}
+
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover {
+	color: #FFF;
+	background: #12aa66;
+}
+
+.navbar .nav.navbar-nav a,
+.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+	color: #FFF;
+	padding: 16px 14px;
+}
+
+.navbar .nav.navbar-nav a,
+.btn-login,
+.btn-signup {
+	transition: .3s ease;
+}
+
+.navbar-default .navbar-toggle {
+	border: none;
+	color: #FFF;
+	font-size: 24px;
+	margin-top: 2px;
+	margin-bottom: 1px;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:active,
+.navbar-default .navbar-toggle:focus {
+	background: rgba(0, 0, 0, 0);
+}
+
+@media (max-width: 767px) {
+	.navbar .navbar-header .navbar-brand {
+		padding: 19px;
+	}
+	.navbar-nav>li>a {
+		border-bottom: 1px solid #777;
+		background: #666;
+	}
+	.navbar-nav>li>a:hover,
+	.navbar-nav>li>a:active {
+		background: #676767;
+	}
+	.navbar-default .navbar-collapse {
+		border: none;
+		background: #777;
+	}
+}
+
+.btn-login,
+.btn-signup {
+	border: 2px solid #FFF;
+	font-weight: 600;
+	font-size: 15px;
+}
+
+.btn-login, .btn-signup {
+	color: #FFF;
+	margin: 8px 5px;
+}
+
+.btn-login:hover,
+.btn-login:focus,
+.btn-login:active,
+.btn-signup:hover,
+.btn-signup:focus,
+.btn-signup:active {
+	background: #FFF;
+	color: #1bb773;
+}
+
+/* Login/Signup Page */
+
+#login-signup-form {
+	font-weight: bold;
+	margin: 30px auto;
+	background: #FFF;
+	padding: 25px;
+	box-shadow: 0px 2px 13px rgba(0, 0, 0, .1), 0px 2px 8px rgba(0, 0, 0, .2);
+}
+
+#login-signup-form h1 {
+	line-height: 1.6em;
+	letter-spacing: .01em;
+	margin-top: .2em;
+	margin-bottom: .85em;
+}
+
+#login-signup-form .checkbox-inline label {
+	color: #555;
+	font-weight: 600;
+}
+
+#login-signup-form input[type="submit"] {
+	margin: 15px 0;
+	background: #1bb773;
+	font-size: 23px;
+	letter-spacing: .025em;
+	border-radius: 0;
+	border: none;
+	transition: .2s ease-in-out;
+}
+
+#login-signup-form input[type="submit"]:hover {
+	background: #1cbc74;
+	box-shadow: 0px 1px 8px rgba(0, 0, 0, .3);
+}
+
+#login-signup-form footer {
+	background: #E7E7E7;
+	margin: 25px -25px -25px;
+	padding: 20px 0 15px;
+	line-height: 1.1em;
+}
