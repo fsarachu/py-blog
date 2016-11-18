@@ -42,7 +42,7 @@ class SignupHandler(Handler):
             self.render('signup.html', **params)
         else:
             new_user = User(username=username, email=email,
-                            password=PasswordHelper.make_password_hash())
+                            password=PasswordHelper.make_password_hash(password))
             new_user.put()
 
             self.response.headers.add_header('Set-Cookie',
