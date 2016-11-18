@@ -1,6 +1,7 @@
 from Handler import Handler
 from entities import User
 from helpers import CookieHelper
+from helpers import PasswordHelper
 from validators import *
 
 
@@ -40,7 +41,8 @@ class SignupHandler(Handler):
         if have_error:
             self.render('signup.html', **params)
         else:
-            new_user = User(username=username, email=email, password=password)  # TODO: hash password!
+            new_user = User(username=username, email=email,
+                            password=PasswordHelper.make_password_hash())
             new_user.put()
 
             self.response.headers.add_header('Set-Cookie',
