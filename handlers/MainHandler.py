@@ -3,10 +3,9 @@ from Handler import Handler
 
 class MainHandler(Handler):
     def get(self):
-        user_id = self.request.cookies.get('user_id')
+        username = self.request.cookies.get('username')
 
-        if user_id:
-            # Get user from db and then..
-            self.render('index.html')
+        if username:
+            self.render('index.html', username=username)
         else:
             self.redirect('/signup')
