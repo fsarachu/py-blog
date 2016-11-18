@@ -21,11 +21,7 @@ class CookieHelper:
     def check_secure_value(s):
         value = s.split('-')[0]
         salt = (s.split('-')[1]).split(',')[0]
-
-        if s == CookieHelper.make_secure_value(value, salt):
-            return value
-        else:
-            return None
+        return value if s == CookieHelper.make_secure_value(value, salt) else None
 
     @staticmethod
     def make_salt(length=5):
