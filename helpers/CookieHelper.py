@@ -15,12 +15,12 @@ class CookieHelper:
     def make_secure_value(s, salt=None):
         if not salt:
             salt = CookieHelper.make_salt()
-        return '{}-{},{}'.format(s, salt, CookieHelper.hash_str(salt, s))
+        return '{}-{}_{}'.format(s, salt, CookieHelper.hash_str(salt, s))
 
     @staticmethod
     def check_secure_value(s):
         value = s.split('-')[0]
-        salt = (s.split('-')[1]).split(',')[0]
+        salt = (s.split('-')[1]).split('_')[0]
         return value if s == CookieHelper.make_secure_value(value, salt) else None
 
     @staticmethod
