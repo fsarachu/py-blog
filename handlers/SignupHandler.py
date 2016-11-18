@@ -35,5 +35,5 @@ class SignupHandler(Handler):
             self.render('signup.html', **params)
         else:
             self.response.headers.add_header('Set-Cookie',
-                                             'username={}'.format(CookieHelper.make_secure_value(username)))
+                                             'username={}; Path=/'.format(CookieHelper.make_secure_value(username)))
             self.redirect('/')
