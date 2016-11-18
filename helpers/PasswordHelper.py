@@ -2,6 +2,9 @@ from helpers import HashHelper
 
 
 class PasswordHelper:
+    def __init__(self):
+        pass
+
     @staticmethod
     def make_password_hash(plain_password, salt=None):
         if not salt:
