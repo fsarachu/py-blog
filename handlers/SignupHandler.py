@@ -40,6 +40,10 @@ class SignupHandler(Handler):
         if have_error:
             self.render('signup.html', **params)
         else:
+            new_user = User(username=username, email=email, password=password)  # TODO: hash password!
+            new_user.put()
+
             self.response.headers.add_header('Set-Cookie',
-                                             'username={}; Path=/'.format(CookieHelper.make_secure_value(username)))
+                                             'username={}; Path=/'.format(
+                                                 CookieHelper.make_secure_value(new_user.username)))
             self.redirect('/')
