@@ -48,4 +48,4 @@ class SignupHandler(Handler):
             self.response.headers.add_header('Set-Cookie',
                                              'username={}; Path=/'.format(
                                                  CookieHelper.make_secure_value(new_user.username)))
-            self.redirect('/')
+            self.redirect('/welcome')
