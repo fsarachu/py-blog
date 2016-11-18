@@ -1,6 +1,14 @@
-class PasswordHelper:
-    def make_password_hash(self, plaintext_password):
-        pass
+from helpers import HashHelper
 
-    def check_password_hash(self, hash):
+
+class PasswordHelper:
+    @staticmethod
+    def make_password_hash(plain_password, salt=None):
+        if not salt:
+            salt = HashHelper.make_salt()
+
+        password_hash = '{}{}'.format(salt, HashHelper.hash_str(salt, plain_password))
+        return password_hash
+
+    def check_password_hash(self, password_hash):
         pass
