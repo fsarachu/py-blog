@@ -1,4 +1,5 @@
 from Handler import Handler
+from helpers import CookieHelper
 from validators import *
 
 
@@ -33,4 +34,6 @@ class SignupHandler(Handler):
         if have_error:
             self.render('signup.html', **params)
         else:
-            self.redirect('/welcome?username={}'.format(username))
+            self.response.headers.add_header('Set-Cookie',
+                                             'username={}'.format(CookieHelper.make_secure_value(username)))
+            self.redirect('/')
