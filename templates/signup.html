@@ -11,32 +11,36 @@
           </h1>
         </header>
 
-        <div class="form-group">
+        <div class="form-group{% if error_username %}has-feedback has-error{% endif %}">
           <div class="input-group">
             <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-            <input type="text" name="username" class="form-control" placeholder="Username">
+            <input type="text" name="username" class="form-control" placeholder="Username" value="{{ username }}">
           </div>
+          <small class="help-block">{{ error_username }}</small>
         </div>
 
-        <div class="form-group">
+        <div class="form-group{% if error_email %}has-feedback has-error{% endif %}">
           <div class="input-group">
             <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-            <input type="email" name="email" class="form-control" placeholder="Email">
+            <input type="email" name="email" class="form-control" placeholder="Email" value="{{ email }}">
           </div>
+          <small class="help-block">{{ error_email }}</small>
         </div>
 
-        <div class="form-group">
+        <div class="form-group{% if error_password %}has-feedback has-error{% endif %}">
           <div class="input-group">
             <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
             <input type="password" name="password" class="form-control" placeholder="Password">
           </div>
+          <small class="help-block">{{ error_password }}</small>
         </div>
 
-        <div class="form-group">
+        <div class="form-group{% if error_verify %}has-feedback has-error{% endif %}">
           <div class="input-group">
             <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
             <input type="password" name="verify" class="form-control" placeholder="Repeat Your Password">
           </div>
+          <small class="help-block">{{ error_verify }}</small>
         </div>
 
         <input class="btn btn-primary btn-block btn-lg" type="submit" value="Let&#39;s do it!">
@@ -48,39 +52,4 @@
       </form>
     </div>
   </div>
-  {#  <form action="/signup" method="post">#}
-  {#    <label>#}
-  {#      Username:#}
-  {#      <input type="text" name="username" value="{{ username }}">#}
-  {#    </label>#}
-  {#    {% if error_username %}#}
-  {#      <span style="color: red;">{{ error_username }}</span>#}
-  {#    {% endif %}#}
-  {#    <br><br>#}
-  {#    <label>#}
-  {#      Password:#}
-  {#      <input type="password" name="password">#}
-  {#    </label>#}
-  {#    {% if error_password %}#}
-  {#      <span style="color: red;">{{ error_password }}</span>#}
-  {#    {% endif %}#}
-  {#    <br><br>#}
-  {#    <label>#}
-  {#      Re-type Password:#}
-  {#      <input type="password" name="verify">#}
-  {#    </label>#}
-  {#    {% if error_verify %}#}
-  {#      <span style="color: red;">{{ error_verify }}</span>#}
-  {#    {% endif %}#}
-  {#    <br><br>#}
-  {#    <label>#}
-  {#      Email:#}
-  {#      <input type="text" name="email" value="{{ email }}">#}
-  {#    </label>#}
-  {#    {% if error_email %}#}
-  {#      <span style="color: red;">{{ error_email }}</span>#}
-  {#    {% endif %}#}
-  {#    <br><br>#}
-  {#    <input type="submit" value="Sign Up!">#}
-  {#  </form>#}
 {% endblock %}
