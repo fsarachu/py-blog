@@ -25,4 +25,4 @@ class CookieHelper:
 
     @staticmethod
     def make_salt(length=5):
-        return ''.join(random.choice(string.ascii_letters) for _ in range(length))
+        return ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(length))
