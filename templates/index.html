@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h2>Welcome {{ username }}!</h2>
+  {% if username %}
+    <h2>Welcome {{ username }}!</h2>
+  {% endif %}
   <div class="row">
     <div class="col-xs-12">
       <h1>Latest Posts:</h1>
