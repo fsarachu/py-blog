@@ -5,7 +5,7 @@ from helpers import PasswordHelper
 
 class User(db.Model):
     username = db.StringProperty(required=True)
-    email = db.EmailProperty()
+    email = db.StringProperty()
     password = db.StringProperty(required=True)
 
     @classmethod

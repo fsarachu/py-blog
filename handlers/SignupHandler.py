@@ -25,7 +25,7 @@ class SignupHandler(Handler):
                 params['error_username'] = 'Username already exists!'
                 have_error = True
 
-        if not SignupValidator.valid_email(email):
+        if email != '' and not SignupValidator.valid_email(email):
             params['error_email'] = 'Email is not valid!'
             have_error = True
 
