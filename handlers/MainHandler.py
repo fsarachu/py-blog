@@ -3,4 +3,7 @@ from Handler import Handler
 
 class MainHandler(Handler):
     def get(self):
-        self.render('index.html', user=self.user)
+        if self.user:
+            self.render('index.html', user=self.user)
+        else:
+            self.redirect('/signup')
