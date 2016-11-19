@@ -2,5 +2,5 @@ from LoginHandler import LoginHandler
 from LogoutHandler import LogoutHandler
 from MainHandler import MainHandler
 from NewPostHandler import NewPostHandler
+from ShowPostHandler import ShowPostHandler
 from SignupHandler import SignupHandler
-from ShowPostHandler import
