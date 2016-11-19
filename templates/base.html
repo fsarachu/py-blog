@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel='shortcut icon' type='image/x-icon' href='/static/favicon.ico' />
+  <link rel='shortcut icon' type='image/x-icon' href='/static/favicon.ico'/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="stylesheet" href="/static/css/bootstrap.min.css">
@@ -24,8 +24,13 @@
     </div>
     <div class="collapse navbar-collapse" id="collapsemenu">
       <div class="navbar-right">
-        <a class="btn btn-login navbar-btn" href="/login">Log in</a>
-        <a class="btn btn-signup navbar-btn" href="/signup">Sign up</a>
+        {% if user %}
+          <a class="btn btn-ghost navbar-btn" href="/logout">Log out</a>
+        {% else %}
+          <a class="btn btn-ghost navbar-btn" href="/login">Log in</a>
+          <a class="btn btn-ghost navbar-btn" href="/signup">Sign up</a>
+        {% endif %}
+
       </div>
 
       <ul class="nav navbar-nav">
