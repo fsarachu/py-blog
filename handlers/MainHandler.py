@@ -4,6 +4,6 @@ from Handler import Handler
 class MainHandler(Handler):
     def get(self):
         if self.user:
-            self.render('index.html', username=self.user.username)
+            self.render('index.html', user=self.user)
         else:
             self.redirect('/login')
