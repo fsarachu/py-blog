@@ -24,4 +24,4 @@ class LoginHandler(Handler):
             self.render('login.html', **params)
         else:
             self.login(user)
-            self.redirect('/welcome')
+            self.redirect('/')

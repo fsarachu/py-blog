@@ -43,4 +43,4 @@ class SignupHandler(Handler):
             user.put()
 
             self.login(user)
-            self.redirect('/welcome')
+            self.redirect('/')
