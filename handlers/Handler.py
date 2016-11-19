@@ -28,6 +28,7 @@ class Handler(webapp2.RequestHandler):
         cookie_value = self.request.cookies.get(name)
         return cookie_value and CookieHelper.check_secure_value(cookie_value)
 
+    # noinspection PyAttributeOutsideInit
     def initialize(self, *args, **kwargs):
         webapp2.RequestHandler.initialize(self, *args, **kwargs)
         user_id = self.read_secure_cookie('user_id')
