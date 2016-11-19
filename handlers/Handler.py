@@ -35,6 +35,8 @@ class Handler(webapp2.RequestHandler):
         user_id = self.read_secure_cookie('user_id')
         if user_id:
             self.user = User.by_id(user_id)
+        else:
+            self.user = None
 
     def login(self, user):
         self.set_secure_cookie('user_id', str(user.key().id()))
