@@ -47,8 +47,7 @@ body {
 }
 
 .navbar .nav.navbar-nav a,
-.btn-login,
-.btn-signup {
+.btn-ghost {
     transition: .3s ease;
 }
 
@@ -87,24 +86,20 @@ body {
     }
 }
 
-.btn-login,
-.btn-signup {
+.btn-ghost {
     border: 2px solid #FFF;
     font-weight: 600;
     font-size: 15px;
 }
 
-.btn-login, .btn-signup {
+.btn-ghost {
     color: #FFF;
     margin: 8px 5px;
 }
 
-.btn-login:hover,
-.btn-login:focus,
-.btn-login:active,
-.btn-signup:hover,
-.btn-signup:focus,
-.btn-signup:active {
+.btn-ghost:hover,
+.btn-ghost:focus,
+.btn-ghost:active {
     background: #FFF;
     color: #1bb773;
 }
