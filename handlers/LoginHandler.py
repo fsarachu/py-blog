@@ -1,6 +1,5 @@
 from Handler import Handler
 from entities import User
-from helpers import PasswordHelper
 
 
 class LoginHandler(Handler):
@@ -14,13 +13,10 @@ class LoginHandler(Handler):
 
         params = dict(username=username)
 
-        user = User.by_name(username)
+        user = User.login(username, password)
 
-        if not user or not PasswordHelper.check_password_hash(password, user.password):
-            have_error = True
-            params['error_login'] = 'Invalid login information'
-
-        if have_error:
+        if not user:
+            params['error_login'] = 'Invalid username or password!'
             self.render('login.html', **params)
         else:
             self.login(user)
