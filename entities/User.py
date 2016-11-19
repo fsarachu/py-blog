@@ -14,7 +14,7 @@ class User(db.Model):
 
     @classmethod
     def by_name(cls, username):
-        user = User.all().filter('name =', username).get()
+        user = User.all().filter('username =', username).get()
         return user
 
     @classmethod
