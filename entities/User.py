@@ -22,4 +22,8 @@ class User(db.Model):
         password_hash = PasswordHelper.make_password_hash(password)
         return User(username=username, password=password_hash, email=email)
 
-
+    @classmethod
+    def login(cls, username, password):
+        user = cls.by_name(username)
+        if user and PasswordHelper.check_password_hash(password, user.password):
+            return user
