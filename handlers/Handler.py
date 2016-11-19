@@ -21,12 +21,13 @@ class Handler(webapp2.RequestHandler):
     def set_secure_cookie(self, name, value):
         self.response.headers.add_header(
             'Set-cookie',
-            '{}={}; Path=/'.format(name, value)
+            '{}={}; Path=/'.format(name, CookieHelper.make_secure_value(value))
         )
 
     def read_secure_cookie(self, name):
         cookie_value = self.request.cookies.get(name)
-        return cookie_value and CookieHelper.check_secure_value(cookie_value)
+        if cookie_value:
+            return CookieHelper.check_secure_value(cookie_value)
 
     # noinspection PyAttributeOutsideInit
     def initialize(self, *args, **kwargs):
