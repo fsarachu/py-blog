@@ -3,6 +3,7 @@ import os
 
 import webapp2
 
+from entities import User
 from helpers import CookieHelper
 
 
@@ -26,3 +27,8 @@ class Handler(webapp2.RequestHandler):
     def read_secure_cookie(self, name):
         cookie_value = self.request.cookies.get(name)
         return cookie_value and CookieHelper.check_secure_value(cookie_value)
+
+    def initialize(self, *args, **kwargs):
+        webapp2.RequestHandler.initialize(self, *args, **kwargs)
+        user_id = self.read_secure_cookie('user_id')
+        self.user = user_id and User.get_by_id(int(user_id))
