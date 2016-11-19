@@ -45,7 +45,5 @@ class SignupHandler(Handler):
                             password=PasswordHelper.make_password_hash(password))
             new_user.put()
 
-            self.response.headers.add_header('Set-Cookie',
-                                             'username={}; Path=/'.format(
-                                                 CookieHelper.make_secure_value(new_user.username)))
+
             self.redirect('/welcome')
