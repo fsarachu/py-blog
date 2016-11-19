@@ -9,7 +9,7 @@ class CookieHelper:
 
     @staticmethod
     def make_secure_value(s):
-        return '{}-{}'.format(s, HashHelper.hash_str(CookieHelper.SECRET, s))
+        return '{}-{}'.format(s, HashHelper.hash_str(CookieHelper.SECRET, str(s)))
 
     @staticmethod
     def check_secure_value(cookie_str):
