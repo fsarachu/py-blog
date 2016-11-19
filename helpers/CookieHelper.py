@@ -14,4 +14,5 @@ class CookieHelper:
     @staticmethod
     def check_secure_value(cookie_str):
         value = cookie_str.split('-')[0]
-        return value if cookie_str == CookieHelper.make_secure_value(value) else None
+        if cookie_str == CookieHelper.make_secure_value(value):
+            return value
