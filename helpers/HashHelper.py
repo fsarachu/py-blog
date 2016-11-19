@@ -1,3 +1,4 @@
+import hashlib
 import hmac
 import random
 
@@ -8,7 +9,7 @@ class HashHelper:
 
     @staticmethod
     def hash_str(secret_key, message):
-        return hmac.new(str(secret_key), str(message)).hexdigest()
+        return hmac.new(str(secret_key), str(message), hashlib.sha256).hexdigest()
 
     @staticmethod
     def make_salt(length=5):
