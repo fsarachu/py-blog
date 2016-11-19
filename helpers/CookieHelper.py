@@ -16,15 +16,3 @@ class CookieHelper:
         value = cookie_str.split('-')[0]
         if cookie_str == CookieHelper.make_secure_value(value):
             return value
-
-    @staticmethod
-    def set_secure_cookie(request_handler, name, value):
-        request_handler.response.headers.add_header(
-            'Set-cookie',
-            '{}={}; Path=/'.format(name, value)
-        )
-
-    @staticmethod
-    def read_secure_cookie(request_handler, name):
-        cookie_value = request_handler.request.cookies.get(name)
-        return cookie_value and CookieHelper.check_secure_value(cookie_value)
