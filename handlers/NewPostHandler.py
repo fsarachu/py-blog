@@ -4,14 +4,21 @@ from entities import Post
 
 class NewPostHandler(Handler):
     def get(self):
-        self.render('new_post.html')
+        if not self.user:
+            self.redirect('/login')
+        else:
+            self.render('new_post.html')
 
     def post(self):
+        if not self.user:
+            self.redirect('/login')
+            return
+
         subject = self.request.get('subject')
         content = self.request.get('content')
 
         if subject and content:
-            new_post = Post(subject=subject, content=content)
+            new_post = Post(author=self.user, subject=subject, content=content)
             new_post.put()
             self.redirect('/' + str(new_post.key().id()))
         else:
