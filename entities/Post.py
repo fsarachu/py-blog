@@ -1,6 +1,6 @@
 from google.appengine.ext import db
 
-from entities import User
+from User import User
 
 
 class Post(db.Model):
