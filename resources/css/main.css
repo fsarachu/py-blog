@@ -109,10 +109,6 @@ body {
     height: 200px;
 }
 
-.post-preview .panel-body {
-    overflow: hidden;
-}
-
 /* Login/Signup Page */
 
 #login-signup-form {
