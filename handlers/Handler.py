@@ -18,10 +18,19 @@ class Handler(webapp2.RequestHandler):
         template = self.JINJA_ENV.get_template(template_name)
         self.write(template.render(kwargs))
 
-    def set_secure_cookie(self, name, value):
+    def set_secure_cookie(self, name, value, expires=None):
+        options_list = ['Path=/']
+
+        if expires:
+            options_list.append('Expires={}'.format(expires))
+
+        options_str = ''
+        for option in options_list:
+            options_str += '; ' + option
+
         self.response.headers.add_header(
             'Set-cookie',
-            '{}={}; Path=/'.format(name, CookieHelper.make_secure_value(value))
+            '{}={}{}'.format(name, CookieHelper.make_secure_value(value), options_str)
         )
 
     def read_secure_cookie(self, name):
@@ -38,8 +47,11 @@ class Handler(webapp2.RequestHandler):
         else:
             self.user = None
 
-    def login(self, user):
-        self.set_secure_cookie('user_id', str(user.key().id()))
+    def login(self, user, remember=False):
+        if remember:
+            self.set_secure_cookie('user_id', str(user.key().id()), expires='Wed, 01 Jan 2025 00:00:00 GMT')
+        else:
+            self.set_secure_cookie('user_id', str(user.key().id()))
 
     def logout(self):
         self.response.headers.add_header('Set-Cookie', 'user_id=; Path=/')

@@ -9,6 +9,7 @@ class LoginHandler(Handler):
     def post(self):
         username = self.request.get('username')
         password = self.request.get('password')
+        remember = self.request.get('remember')
 
         params = dict(username=username)
 
@@ -18,5 +19,8 @@ class LoginHandler(Handler):
             params['error_login'] = 'Invalid username or password!'
             self.render('login.html', **params)
         else:
-            self.login(user)
+            remember = True if remember == 'true' else False
+
+            self.login(user, remember=remember)
+
             self.redirect('/')
