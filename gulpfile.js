@@ -23,3 +23,5 @@ gulp.task('bower-js', function () {
         .pipe(concat('vendor.js', {newLine: ';'}))
         .pipe(gulp.dest('./public/js/'))
 });
+
+gulp.task('bower-all', ['bower-css', 'bower-fonts', 'bower-js'])
