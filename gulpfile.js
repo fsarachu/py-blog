@@ -42,3 +42,4 @@ gulp.task('app-js', function () {
 
 gulp.task('bower-all', ['bower-css', 'bower-fonts', 'bower-js']);
 gulp.task('app-all', ['app-css', 'app-js'])
+gulp.task('build', ['bower-all', 'app-all']);
