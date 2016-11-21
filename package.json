@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/fsarachu/py-blog/issues"
   },
-  "homepage": "https://github.com/fsarachu/py-blog#readme"
+  "homepage": "https://github.com/fsarachu/py-blog#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
