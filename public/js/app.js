@@ -1,1 +1,1 @@
-$(function(){});
+$(function(){$(".post-preview").dotdotdot({ellipsis:"... ",wrap:"word",fallbackToLetter:!0,after:"a.readmore",watch:!0,height:null,tolerance:0,lastCharacter:{remove:[" ",",",";",".","!","?"],noEllipsis:[]}})});
