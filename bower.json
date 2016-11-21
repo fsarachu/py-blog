@@ -1,0 +1,18 @@
+{
+  "name": "py-blog",
+  "description": "A simple blogging application using Google App Engine",
+  "main": "index.js",
+  "authors": [
+    "Franco Sarachu"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/fsarachu/py-blog",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
