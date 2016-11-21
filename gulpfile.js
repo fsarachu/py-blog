@@ -9,3 +9,8 @@ gulp.task('bower-css', function () {
         .pipe(rename('vendor.css'))
         .pipe(gulp.dest('./public/css/'))
 });
+
+gulp.task('bower-fonts', function () {
+    return gulp.src('./bower_components/bootstrap/fonts/*')
+        .pipe(gulp.dest('./public/fonts/'))
+});
