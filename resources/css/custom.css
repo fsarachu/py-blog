@@ -105,8 +105,12 @@ body {
 }
 
 /* Index */
-.panel {
+.post-preview {
     height: 200px;
+}
+
+.post-preview .panel-body {
+    overflow: hidden;
 }
 
 /* Login/Signup Page */

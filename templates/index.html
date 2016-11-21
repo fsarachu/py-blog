@@ -14,7 +14,7 @@
     <div class="row">
       {% for post in posts %}
         <div class="col-md-6">
-          <div class="panel panel-default">
+          <div class="panel panel-default post-preview">
             <div class="panel-heading">
               <div class="panel-title">
                 <h3><a href="/{{ post.key().id() }}">{{ post.subject }}</a>
@@ -24,7 +24,7 @@
               </div>
             </div>
             <div class="panel-body">
-              <p>{{ post.content[:100] }}</p>
+              <p>{{ post.content }}</p>
             </div>
           </div>
         </div>
