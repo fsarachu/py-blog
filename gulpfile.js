@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var cleanCss = require('gulp-clean-css');
+var uglify = require('gulp-uglify');
 
 /* Bower components are hardcoded just beacause this is a small thing */
 
@@ -30,6 +31,13 @@ gulp.task('app-css', function () {
         .pipe(concat('styles.css'))
         .pipe(cleanCss())
         .pipe(gulp.dest('./public/css/'))
+});
+
+gulp.task('app-js', function () {
+    return gulp.src('./resources/js/*.js')
+        .pipe(concat('app.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('./public/js/'))
 });
 
 gulp.task('bower-all', ['bower-css', 'bower-fonts', 'bower-js'])
