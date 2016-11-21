@@ -1,0 +1,19 @@
+{
+  "name": "py-blog",
+  "version": "1.0.0",
+  "description": "A simple blogging application using Google App Engine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fsarachu/py-blog.git"
+  },
+  "author": "Franco Sarachu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fsarachu/py-blog/issues"
+  },
+  "homepage": "https://github.com/fsarachu/py-blog#readme"
+}
