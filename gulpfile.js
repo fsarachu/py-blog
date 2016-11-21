@@ -28,7 +28,7 @@ gulp.task('bower-js', function () {
 
 gulp.task('app-css', function () {
     return gulp.src('./resources/css/*.css')
-        .pipe(concat('styles.css'))
+        .pipe(concat('app.css'))
         .pipe(cleanCss())
         .pipe(gulp.dest('./public/css/'))
 });
