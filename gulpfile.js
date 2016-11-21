@@ -40,7 +40,12 @@ gulp.task('app-js', function () {
         .pipe(gulp.dest('./public/js/'))
 });
 
+gulp.task('watch', function () {
+    gulp.watch('./bower_components/**/*', ['bower-all']);
+    gulp.watch('./resources/**/*', ['app-all']);
+});
+
 gulp.task('bower-all', ['bower-css', 'bower-fonts', 'bower-js']);
 gulp.task('app-all', ['app-css', 'app-js']);
 gulp.task('build', ['bower-all', 'app-all']);
-gulp.task('default', ['build']);
+gulp.task('default', ['build', 'watch']);
