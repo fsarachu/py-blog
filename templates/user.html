@@ -3,11 +3,12 @@
 {% block content %}
   <div class="row">
     <div class="col-xs-12 text-center">
-      <h1>Posts by {{ user.username }}</h1>
+      <h1>Latest posts by {{ user.username }}</h1>
     </div>
   </div>
   <div class="row">
-    {% if user.posts|length > 0 %}
+    {% set posts = user.posts.order('-created').fetch(limit=10) %}
+    {% if posts|length > 0 %}
       {% for post in user.posts %}
         <div class="col-md-6">
           <div class="panel panel-default post-preview">
@@ -26,7 +27,9 @@
         </div>
       {% endfor %}
     {% else %}
-      <h3 class="alert-warning">This user has no posts...</h3>
+      <div class="alert alert-info">
+        <p>This user has no posts...</p>
+      </div>
     {% endif %}
   </div>
 {% endblock %}
