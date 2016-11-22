@@ -7,7 +7,7 @@ class ShowPostHandler(Handler):
         post = Post.get_by_id(int(post_id))
 
         if not post:
-            self.error(404)
+            self.render('404.html')
             return
 
         self.render('post.html', post=post)

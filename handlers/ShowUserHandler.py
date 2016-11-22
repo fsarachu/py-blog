@@ -7,7 +7,7 @@ class ShowUserHandler(Handler):
         user = User.by_name(username)
 
         if not user:
-            self.error(404)
+            self.render('404.html')
             return
 
         self.render('user.html', user=user)
