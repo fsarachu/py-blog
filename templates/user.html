@@ -16,7 +16,7 @@
               <div class="panel-title">
                 <h3><a href="/{{ post.key().id() }}">{{ post.subject }}</a>
                   <div class="small">{{ post.created.strftime('%B %d, %Y') }} by <a
-                      href="#">{{ post.author.username }}</a></div>
+                      href="/user/{{ post.author.username }}">{{ post.author.username }}</a></div>
                 </h3>
               </div>
             </div>
