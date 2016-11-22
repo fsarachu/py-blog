@@ -3,4 +3,5 @@ from LogoutHandler import LogoutHandler
 from MainHandler import MainHandler
 from NewPostHandler import NewPostHandler
 from ShowPostHandler import ShowPostHandler
+from ShowUserHandler import ShowUserHandler
 from SignupHandler import SignupHandler
