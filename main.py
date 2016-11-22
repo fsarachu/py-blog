@@ -8,5 +8,6 @@ app = webapp2.WSGIApplication([
     ('/login', LoginHandler),
     ('/logout', LogoutHandler),
     ('/newpost', NewPostHandler),
-    ('/(\d+)', ShowPostHandler)
+    ('/(\d+)', ShowPostHandler),
+    ('/user/(.*)', ShowUserHandler)
 ], debug=True)
