@@ -1,31 +1,32 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="row">
-  <div class="col-xs-12 text-center">
-    <h1>Posts by {{ user.username }}</h1>
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h1>Posts by {{ user.username }}</h1>
+    </div>
   </div>
-</div>
-<div class="row">
-  {% if user.posts|length > 0 %}
-    {% for post in user.posts %}
-      <div class="col-md-6">
-        <div class="panel panel-default post-preview">
-          <div class="panel-heading">
-            <div class="panel-title">
-              <h3><a href="/{{ post.key().id() }}">{{ post.subject }}</a>
-                <div class="small">{{ post.created.strftime('%B %d, %Y') }} by <a
-                    href="#">{{ post.author.username }}</a></div>
-              </h3>
+  <div class="row">
+    {% if user.posts|length > 0 %}
+      {% for post in user.posts %}
+        <div class="col-md-6">
+          <div class="panel panel-default post-preview">
+            <div class="panel-heading">
+              <div class="panel-title">
+                <h3><a href="/{{ post.key().id() }}">{{ post.subject }}</a>
+                  <div class="small">{{ post.created.strftime('%B %d, %Y') }} by <a
+                      href="#">{{ post.author.username }}</a></div>
+                </h3>
+              </div>
+            </div>
+            <div class="panel-body">
+              <p>{{ post.content }} <a href="/{{ post.key().id() }}" class="readmore">Read More &raquo;</a></p>
             </div>
           </div>
-          <div class="panel-body">
-            <p>{{ post.content }} <a href="/{{ post.key().id() }}" class="readmore">Read More &raquo;</a></p>
-          </div>
         </div>
-      </div>
-    {% endfor %}
-  {% else %}
-    <h3 class="alert-warning">This user has no posts...</h3>
-  {% endif %}
-</div>
+      {% endfor %}
+    {% else %}
+      <h3 class="alert-warning">This user has no posts...</h3>
+    {% endif %}
+  </div>
+{% endblock %}
